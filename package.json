@@ -1,0 +1,25 @@
+{
+    "name": "social-network-api",
+    "version": "1.0.0",
+    "description": "Social API to use with friends",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "node index"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "keywords": [],
+      "author": "Marek Polak",
+      "bugs": {
+        "url": ""
+      },
+      "homepage": "",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^7.0.2",
+      "moment":"2.29.4"
+    }
+  }
