@@ -6,7 +6,7 @@ const userController = {
         .select("-__v")
         .then((dbUserData) => res.json(dbUserData))
         .catch((err) => {
-            return res.status(500).json(err);
+            res.status(500).json(err);
         });
     },
     
@@ -24,14 +24,14 @@ const userController = {
             res.json(dbUserData);
         })
         .catch((err) => {
-            return res.status(500).json(err);
+            res.status(500).json(err);
         });
     },
     
     createUser({ body }, res) {
         User.create(body)
         .then((dbUserData) => res.json(dbUserData))
-        .catch((err) => {return res.status(500).json(err);})
+        .catch((err) => {res.status(500).json(err);})
     },
     
     updateUser({ params, body }, res) {
@@ -49,7 +49,7 @@ const userController = {
             }
             res.json(dbUserData);
         })
-        .catch((err) => {return res.status(500).json(err)})
+        .catch((err) => {res.status(500).json(err)})
     },
 
     deleteUser({ params }, res) {
@@ -58,12 +58,10 @@ const userController = {
             if (!dbUserData) {
                 return res.status(404).json({ message: "No user found" });
             }
-            return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
-        })
-        .then(() => {
+            Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
             res.json({ message: "User and all thoughts deleted" });
         })
-        .catch((err) => {return res.status(500).json(err)});
+        .catch((err) => {res.status(500).json(err)});
     },
     addFriend({ params }, res) {
         User.findOneAndUpdate(
@@ -80,7 +78,7 @@ const userController = {
             }
             res.json(dbUserData);
         })
-        .catch((err) => {return res.status(500).json(err)});
+        .catch((err) => {res.status(500).json(err)});
     },
     deleteFriend({ params }, res) {
         User.findOneAndUpdate(
@@ -98,7 +96,7 @@ const userController = {
             }
             res.json(dbUserData);
         })
-        .catch((err) => {return res.status(500).json(err)});
+        .catch((err) => {res.status(500).json(err)});
     },
 };
 
