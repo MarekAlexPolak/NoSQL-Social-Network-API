@@ -1,11 +1,11 @@
 {
-    "name": "social-network-api",
+    "name": "Social Network API",
     "version": "1.0.0",
     "description": "Social API to use with friends",
-    "main": "index.js",
+    "main": "server.js",
     "license": "MIT",
     "scripts": {
-      "start": "node index"
+      "start": "node index.js"
     },
     "repository": {
         "type": "git",
