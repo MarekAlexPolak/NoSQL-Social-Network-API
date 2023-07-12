@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User, Thought } = require("../models");
 
 const thoughtController = {
     getAllThought(req, res) {
@@ -21,8 +21,8 @@ const thoughtController = {
     createThought({ params, body }, res) {
         Thought.create(body)
         .then(({ _id }) => {
-            User.findOneAndUpdate(
-                { _id: params.userId },
+            return User.findOneAndUpdate(
+                { _id: body.userId },
                 { $push: { thoughts: _id } },
                 { new: true }
             );
@@ -59,7 +59,7 @@ const thoughtController = {
             if (!dbThoughtData) {
                 return res.status(404).json({ message: 'No thought found' });
             }
-            User.findOneAndUpdate(
+            return User.findOneAndUpdate(
                 { username: dbThoughtData.username },
                 { $pull: { thoughts: params.id } }
             )
