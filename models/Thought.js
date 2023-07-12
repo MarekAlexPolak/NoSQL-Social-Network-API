@@ -10,19 +10,19 @@ const ReactionSchema = new Schema(
 
     reactionBody: {
       type: String,
-      required: true,
+      required: false,
       maxlength: 280,
     },
 
     username: {
       type: String,
-      required: true,
+      required: false,
     },
 
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
+      get: createdAtVal => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a'),
     },
   },
   {
