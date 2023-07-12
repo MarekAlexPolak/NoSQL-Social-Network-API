@@ -7,7 +7,7 @@ An API for social networks which allows for people to share thoughts, add friend
 ## Table of Contents
 
 - [Installtion](#installation)
-- [Usage] (#usage)
+- [Usage](#usage)
 - [Technologies](#technologies)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -64,4 +64,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact Information
 
 [My Github](https://github.com/MarekAlexPolak)
+
 Email: markalexpolak@gmail.com
